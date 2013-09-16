@@ -34,7 +34,7 @@ package
 			
 			//set up the instructions
 			var instructions:TextField = new TextField();
-			instructions.width = 500; instructions.height = 500;
+			instructions.width = 500; instructions.height = 700;
 			instructions.selectable = false;
 			instructions.x = 40; instructions.y = 40;
 			var tf:TextFormat = new TextFormat("sans serif", 22);
@@ -42,7 +42,7 @@ package
 			instructions.text = "Press keys 6 or 7 for playing BG music \n" +
 								"Press M to toggle mute BG \n \n" +
 								"Press keys 1 to 5 for playing SFX \n" +
-								"Press N to toggle mute SFX \n";
+								"Press N to toggle mute SFX \n\n" +
 								"Press SPACE to play a random SFX";
 			addChild(instructions);
 			
@@ -65,6 +65,8 @@ package
 				MBG.toggleMute();
 			else if (e.keyCode == Keyboard.N)
 				MSFX.toggleMute();
+			else if (e.keyCode == Keyboard.SPACE)
+				MSFX.play(gems);
 		}
 	}
 }
